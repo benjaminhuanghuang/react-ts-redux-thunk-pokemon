@@ -7,7 +7,7 @@
 
   const Store = createStore(RootReducer, composeWithDevTools(applyMiddleware(thunk)));
 
-  export type RootStore = ReturnType<typeof RootReducer>
+  export type RootStore = ReturnType<typeof RootReducer>        // type of store uesed in UI component
 
   export default Store
 ```
@@ -65,7 +65,6 @@ export interface PokemonLoading {
 export type PokemonDispatchTypes = PokemonLoading | PokemonFail | PokemonSuccess
 
 
-
 // Actions
 import { Dispatch } from "redux";
 
@@ -86,3 +85,18 @@ export const GetPokemon = (pokemon: string) => async (dispatch: Dispatch<Pokemon
 ```
 
 
+
+## Use store in component
+```
+  import { useSelector } from "react-redux";
+  import { RootStore } from "./Store";
+
+  function App() {
+    const pokemonState = useSelector((state: RootStore) => state.pokemon);
+    const dispatch = useDispatch();
+    
+    return <div className="App">tets</div>;
+  }
+
+  export default App;
+```

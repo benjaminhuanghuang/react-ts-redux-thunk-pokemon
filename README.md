@@ -4,6 +4,11 @@
 - https://github.com/daryanka/typescript-with-redux
 
 
+## Technoloy
+- Typescript
+- React hooks
+- Redux Thunk, Redux hooks
+
 
 ## Setup
 ```
